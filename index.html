@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DBI2 Phase 2 Collaboration Network</title>
+  <link rel="stylesheet" href="network.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">DBI2 · PHASE 2</p>
+      <h1>Proposed project collaboration network</h1>
+      <p class="intro">
+        Explore how proposed Phase 2 projects connect supervisors and collaborators.
+      </p>
+    </header>
+
+    <section class="toolbar" aria-label="Network controls">
+      <input
+        id="search"
+        type="search"
+        placeholder="Search person or project…"
+        aria-label="Search person or project"
+      >
+
+      <select id="position" aria-label="Filter by position">
+        <option value="all">All positions</option>
+        <option>PhD</option>
+        <option>Postdoc</option>
+        <option>PhD/Postdoc</option>
+        <option>AI technician</option>
+      </select>
+
+      <div class="view-toggle" role="group" aria-label="Network view">
+        <button id="projectView" class="active" type="button">
+          Projects + people
+        </button>
+        <button id="peopleView" type="button">
+          Collaboration only
+        </button>
+      </div>
+
+      <button id="reset" type="button">Reset</button>
+    </section>
+
+    <div class="legend">
+      <span><i class="person"></i>Person</span>
+      <span><i class="project"></i>Project</span>
+      <span class="project-legend">━ Supervisor</span>
+      <span class="project-legend">┄ Collaborator</span>
+      <span class="people-legend hidden">━ Shared proposed project</span>
+      <b id="count"></b>
+    </div>
+
+    <section class="layout">
+      <div class="canvas">
+        <svg
+          id="network"
+          viewBox="0 0 1200 760"
+          aria-label="Collaboration network"
+        ></svg>
+      </div>
+
+      <aside id="details">
+        <h2>Explore the network</h2>
+        <p>
+          Click a person or project to highlight its connections.
+          Drag nodes to rearrange the network and use the mouse wheel
+          or trackpad to zoom.
+        </p>
+        <p class="hint">
+          Switch to <strong>Collaboration only</strong> to see direct
+          person-to-person links created by the proposed projects.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="projects.js"></script>
+  <script src="network.js"></script>
+</body>
+</html>
